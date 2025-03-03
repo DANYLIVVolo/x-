@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChicWear - Інтернет-магазин одягу</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+       <img src="photo_5346158514927694827_x.jpg"/>
+        <nav>
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Категорії</a></li>
+                <li><a class="goril"  href="#women">Жінки  </a></li>
+                <li><a class="boy" href="#men"> Чоловіки</a></li>
+                <li><a href="#popular">Новинки</a></li>
+                <li><a href="#">Розпродаж</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <button onclick="toggleCart()">Кошик (<span id="cart-count">0</span>)</button>
+        </div>
+    </header>
+<img class="lp" src="C:\Users\Cyber\Downloads\photo_5325519805501012904_x.jpg"/>
+    <main>
+        <section class="product-list">
+            <h2 id="popular">Популярні товари</h2>
+            <div class="products">
+
+                 <div class="product">
+                    <img src="https://brutalmanshop.com/image/cachewebp/catalog/Dlya%20Nego/Futbolka/toothy_0-406x580.webp"/>
+                    <h3>футболка</h3>
+                    <p>Ціна: 500 грн</p>
+                    <button onclick="addToCart('Фудболка', 500)">Додати в кошик</button>
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRtd4Ap7YoAglRdqgYb0XL9O2Fbd9XNxsMnToM0tUbpmME2MAW5YBkUm3kE0zF_J5Fh2NlnB1jDMZgy4ysysLCUy0pk1GWDaFz-HM1x9l3JQwoI7osGHZtr9ZKn3mBBTRzHLZakg6kwgQ&usqp=CAc"/>
+                    <h3>Джинси</h3>
+                    <p>Ціна: 2000 грн</p>
+                    <button onclick="addToCart('Джинси', 2000)">Додати в кошик</button>
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSoivNqZJuPSPtA7PGrvVyPwYDFw-R6SFv1QjBOvPL_R3_YpsgVCtLuf3ROOAzPbf_soqcEHw3Dra9_4J6-zwUdHNKjogo1gF9RbTNyjbWW4r-tmP4ze9ENqQ&usqp=CAc"/>
+                    <h3>Кросівки</h3>
+                    <p>Ціна: 5000 грн</p>
+                    <button onclick="addToCart('Кросівки', 5000)">Додати в кошик</button>
+                   
+                </div>
+            </div>
+
+        </section>
+        <section class="product-list">
+            <h2 id="women">Жінки</h2>
+            <div class="products">
+
+                 <div class="product">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTlr9S69G7q8AecVdtaZeJUlNXg1-QPqrDFCRoBYOr2LmBNBt63kAMTs_udwf6GeSPsEu-ADvka7qcLS3MGsSHCNjDALRDi1TMXSuvNd9MTBUTYDpWt8kmMrAl_zGgdIKLE5Z5NrQ&usqp=CAc"/>
+                    <h3>футболка</h3>
+                    <p>Ціна: 1500 грн</p>
+                    <button onclick="addToCart('Фудболка', 1200)">Додати в кошик</button>
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTffaEIPg-SQsPyxwpRnlYq5QLRSOZT9g8txEeMr5zWr0OuJFCGSIHdb0-10M7zh4sy4yv83L9TZJE3aodvCsc9pQrZV0H49K7mksI9cSjmbsHzcBw0-glwWBQysbGlrSbfnc4CMOEz&usqp=CAc"/>
+                    <h3>Джинси</h3>
+                    <p>Ціна: 1200 грн</p>
+                    <button onclick="addToCart('Джинси', 1200)">Додати в кошик</button>
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT6QI9avpfWCmZC8vAum-t8RD1Lq56_fRTCxdSAxjl7GrN93Mlt3WTZ0INJU9eJrw8LBbO-EwNX5eMhwEpPnDU2wwKDzUe-ask4J781WO5kx-YjgfSUnNyDjwKcjlogtoxKz4iWhFasuw&usqp=CAc"/>
+                    <h3>Кросівки</h3>
+                    <p>Ціна: 1500 грн</p>
+                    <button onclick="addToCart('Кросівки', 1500)">Додати в кошик</button>
+                   
+                </div>
+            </div>
+            
+        </section>
+            <section>
+                
+            </section>
+        <section class="cart-section" id="cart-section" style="display:none;">
+            <h2>Ваш кошик</h2>
+            <ul id="cart-items"></ul>
+            <p>Загальна сума: <span id="total-price">0</span> грн</p>
+            <button onclick="clearCart()">Очистити кошик</button>
+            <button onclick="checkout()">Оформити покупку</button>
+        </section>
+        <h2 style="text-align: center;" id="men">Чоловіки</h2>
+            <div class="products">
+
+                 <div class="product">
+                    <img src="https://www.fatline.com.ua/images/products/backs/const/det_chernaya_fut_pered.png"/>
+                    <h3>футболка</h3>
+                    <p>Ціна: 1500 грн</p>
+                    <button onclick="addToCart('Фудболка', 1200)">Додати в кошик</button>
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTroeyYDb5ZZb7wYRAFqbsocJQiE6FnHuxle5QrgqNPUg3FuQ5lxSbXpmUp9lD9g-_l7uHWYeRROfXg6QSf9rBbRxNDZMm-grFYS2JIRPo89Wmbn0bMs6ws8qUJPTjhRLGTQWfM4t8Yaw&usqp=CAc"/>
+                    <h3>Джинси</h3>
+                    <p>Ціна: 1200 грн</p>
+                    <button onclick="addToCart('Джинси', 1200)">Додати в кошик</button>
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQfq9EbGjYW1S7YmK9IiUHoju9lhBRK__O__TGC0prDWf2alpNgOUr6cwi-V7eUB7rROK-8-_lIOyddEqgiqSjVFuHdFPw7Nk8wQNilWGd0pzU2hVGJdKpueW6J1u6SsMnbaKmYGw&usqp=CAc"/>
+                    <h3>Кросівки</h3>
+                    <p>Ціна: 1500 грн</p>
+                    <button onclick="addToCart('Кросівки', 1500)">Додати в кошик</button>
+                   
+                </div>
+            </div>
+            
+        </section>
+            <section>
+                
+            </section>
+        <section class="cart-section" id="cart-section" style="display:none;">
+            <h2>Ваш кошик</h2>
+            <ul id="cart-items"></ul>
+            <p>Загальна сума: <span id="total-price">0</span> грн</p>
+            <button onclick="clearCart()">Очистити кошик</button>
+            <button onclick="checkout()">Оформити покупку</button>
+        </section>
+      
+    <main>
+</main>
+
+    <footer>
+        <p>&copy; 2025 ChicWear. Всі права захищені.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
